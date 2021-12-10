@@ -57,7 +57,7 @@ _On Knetworks, a user will be able to create an account and post, edit, and dele
 #### Wireframes
 
 
-![https://www.figma.com/file/nwz4kDLFONfgceeNgJ33YW/Knetworks?node-id=0%3A1](url)
+https://www.figma.com/file/nwz4kDLFONfgceeNgJ33YW/Knetworks?node-id=0%3A1
 
 - Desktop Landing
 
