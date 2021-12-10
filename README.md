@@ -47,7 +47,7 @@ _On Knetworks, a user will be able to create an account and post, edit, and dele
 |      React       | _Front end framework for javascript and HTML_   |
 |   React Router   | _Alows the use of routing on a single page app_ |
 |    Material UI   | _Provides pre-built components for front end_   |
-|  Ruby on Rails   | _Back end frame work for building API_          |
+|  Ruby on Rails   | _Back end framework for building API_          |
 
 <br>
 
