@@ -103,7 +103,7 @@ src
       |__ Answer.jsx
       |__ AnswerComment.jsx
       |__ IdeaComment.jsx
-|__ services
+|__ services.js
 
 ```
 
@@ -128,7 +128,6 @@ src
 ### Server (Back End)
 
 #### ERD Model
-
 
 ![image](https://user-images.githubusercontent.com/65515839/145620935-878280ba-727f-4cf1-9cfd-2990dad13950.png)
 
