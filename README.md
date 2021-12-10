@@ -20,13 +20,13 @@
 
 ## Overview
 
-_Knetworks is a website for thinking out loud. Here you can ask questions or present ideas and get educated answers and feedback from other users.
+_Knetworks is a website for thinking out loud. Here you can ask questions or present ideas and get educated answers and feedback from other users._
 
 <br>
 
 ## MVP
 
-_On Knetworks, a user will be able to create an account and post, edit, and delete questions, ideas, answers, and comments.
+_On Knetworks, a user will be able to create an account and post, edit, and delete questions, ideas, answers, and comments._
 
 <br>
 
