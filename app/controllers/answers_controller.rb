@@ -3,8 +3,7 @@ class AnswersController < ApplicationController
   before_action :set_answer_group, only: :destroy
 
   def index
-    @answers = Answer.where(:question_id == params[:question_id])
-    # @comments = AnswerComment.where(answer_id == @answer.id)
+    @answers = Answer.where(question_id: answer_params[:question_id])
     render json: @answers, include: :answer_comments
   end
 

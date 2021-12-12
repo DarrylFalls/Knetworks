@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_question_group, only: :destroy
 
   def index
-    @questions = Question.where params[:category_id]
+    @questions = Question.where(category_id: question_params[:category_id])
     render json: @questions
   end
 
@@ -29,7 +29,9 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @group.destroy
+    # @answer_comments.destroy
+    @answers.destroy
+    @question.destroy
   end
 
   private
@@ -40,13 +42,13 @@ class QuestionsController < ApplicationController
 
   def set_question_group
     @question = Question.find(params[:id])
-    @answers = Answer.where(:question_id == params[:id])
-    @answer_comments = AnswerComment.where(:answer_id == @answers.id)
-    @group = [
-      @answer_comments,
-      @answers,
-      @question
-    ]
+    @answers = Answer.where(question_id: params[:id])
+    # @answer_comments = AnswerComment.where(answer_id: @answers)
+    # @group = [
+    #   @answer_comments,
+    #   @answers,
+    #   @question
+    # ]
   end
 
   def question_params
