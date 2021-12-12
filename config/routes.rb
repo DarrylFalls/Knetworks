@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  post '/auth/login', to: 'authentications#login'
+  get '/auth/verify', to: 'authentications#verify'
+  resources :users
+  resources :categories
+  resources :questions
+  resources :answers
+  resources :answer_comments
 end
