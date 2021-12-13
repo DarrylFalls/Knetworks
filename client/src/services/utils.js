@@ -55,9 +55,9 @@ export const getUsers = async () => {
   }
 }
 
-export const getQuestions = async (data) => {
+export const getQuestion = async (id) => {
   try {
-    const resp = await api.post('/questions', data)
+    const resp = await api.post(`/questions/${id}`)
     return resp.data
   } catch (error) {
     return error

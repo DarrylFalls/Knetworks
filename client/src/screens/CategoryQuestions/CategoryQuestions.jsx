@@ -14,9 +14,11 @@ const CategoryQuestions = ({ categories }) => {
     <div>
       <div>{category?.name}</div>
       {category.questions?.map((question) => (
-        <Link to={`/question/${question.id}`}>
-          <div>{question.content}</div>
-        </Link>
+        <div>
+          <Link to={`/question/${question.id}`}>
+            <div>{question.content}</div>
+          </Link>
+        </div>
       ))}
     </div>
   )
