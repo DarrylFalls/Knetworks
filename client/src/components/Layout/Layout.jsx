@@ -1,10 +1,10 @@
 import Nav from '../Nav/Nav'
 
-const Layout = ({children}) => {
+const Layout = ({children, loggedIn}) => {
   return (
     <div>
       <div>
-        <Nav />
+        <Nav loggedIn={loggedIn}/>
       </div>
       {children}
     </div>

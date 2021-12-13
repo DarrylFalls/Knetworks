@@ -13,13 +13,16 @@ import {useState, useEffect} from 'react'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
+  const [users, setUsers] = useState('')
+  const [user, setUser] = useState('')
+  const [toggle, setToggle] = useState(true)
   return (
     <div className="App">
-      <Layout>
+      <Layout loggedIn={loggedIn}>
         <Routes>
           <Route path='/' exact element={<Home loggedIn={loggedIn}/>} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/login' element={<Login setLoggedIn={setLoggedIn}/>} />
+          <Route path='/sign-up' element={<SignUp setLoggedIn={setLoggedIn}/>} />
           <Route path='/welcome' element={<Welcome />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='/categories/:id' element={<CategoryQuestions loggedIn={loggedIn}/>} />
