@@ -38,11 +38,16 @@ export const login = async (credentials) => {
 }
 
 export const verify = () => {
-  
+
 }
 
 export const getQuestions = async (data) => {
-
+  try {
+    const resp = await api.post('/questions', data)
+    return resp.data
+  } catch (error) {
+    return error
+  }
 }
 
 export const getAnswerAndComments = async (data) => {
