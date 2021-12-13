@@ -22,12 +22,23 @@ export const signUp = async (credentials) => {
   }
 }
 
-export const signOut = async () => {
+export const signOut = () => {
 
 }
 
 export const login = async (credentials) => {
+  try {
+    const resp = await api.post('/auth/login', credentials)
+    localStorage.setItem('token', resp.data.token)
+    const user = jwtDecode(resp.data.token)
+    return user
+  } catch (error) {
+    return error
+  }
+}
 
+export const verify = () => {
+  
 }
 
 export const getQuestions = async (data) => {
