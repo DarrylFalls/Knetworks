@@ -7,6 +7,7 @@ import AnswerComment from '../AnswerComment/AnswerComment'
 const Answer = ({ id, answerToggle, setAnswerToggle, users }) => {
   const [answer, setAnswer] = useState('')
   const [user, setUser] = useState('')
+  const [commentToggle, setCommentToggle] = useState(true)
 
   useEffect(() => {
     const fetchAnswer = async () => {
@@ -21,9 +22,10 @@ const Answer = ({ id, answerToggle, setAnswerToggle, users }) => {
     <div>
       <div>{answer?.content}</div>
       <div>{user?.username}</div>
+      <div>{answer?.comments.length} comments</div>
       <div>{answer.comments?.map((comment) => (
         <div>
-          <AnswerComment content={comment.content} user_id={comment.user_id} users={users}/>
+          <AnswerComment content={comment.content} user_id={comment.user_id} users={users} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
         </div>
       ))}</div>
     </div>
