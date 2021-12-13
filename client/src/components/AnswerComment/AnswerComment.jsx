@@ -2,7 +2,7 @@
 
 const AnswerComment = () => {
   return (
-    <div></div>
+    <div>comment</div>
   )
 }
 
