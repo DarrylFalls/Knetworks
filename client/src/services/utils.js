@@ -40,14 +40,19 @@ export const login = async (credentials) => {
 export const verify = async () => {
   const token = localStorage.getItem('token')
   if (token) {
-    const res = await api.get('/auth/verify')
-    return res.data
+    const resp = await api.get('/auth/verify')
+    return resp.data
   }
   return false
 }
 
 export const getUsers = async () => {
-
+  try {
+    const resp = await api.get('/users')
+    return resp.data
+  } catch (error) {
+    return error
+  }
 }
 
 export const getQuestions = async (data) => {
