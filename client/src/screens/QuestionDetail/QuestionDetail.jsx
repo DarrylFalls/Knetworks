@@ -5,3 +5,5 @@ const QuestionDetail = () => {
     <div>individual question</div>
   )
 }
+
+export default QuestionDetail
