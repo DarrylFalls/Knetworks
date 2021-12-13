@@ -1,8 +1,9 @@
-
+import {useParams} from 'react-router-dom'
 
 const QuestionDetail = () => {
+  const {id} = useParams()
   return (
-    <div>individual question</div>
+    <div>individual question #{id}</div>
   )
 }
 

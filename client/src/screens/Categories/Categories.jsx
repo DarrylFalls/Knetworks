@@ -6,9 +6,9 @@ const Categories = ({categories}) => {
       <div>Categories</div>
       {
       categories.map((category) => (
-        <div>
-          
-        </div>
+        <Link to={`/categories/${category.id}`}>
+          {category.name}
+        </Link>
       ))}
     </div>
   )
