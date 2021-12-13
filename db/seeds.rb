@@ -45,18 +45,18 @@ Answer.create!(content: 'answer to question 6 asked by user1', user_id: '2', que
 
 puts "#{Answer.count} answers created"
 
-AnswerComment.create!(content: 'iajuh ioj', user_id: '1', answer_id: '2')
-AnswerComment.create!(content: 'ia wejioisdj da', user_id: '2', answer_id: '1')
-AnswerComment.create!(content: 'ioja hjsaioj adf', user_id: '3', answer_id: '3')
-AnswerComment.create!(content: 'pa ojak jo', user_id: '4', answer_id: '4')
-AnswerComment.create!(content: 'wiohj oaj', user_id: '5', answer_id: '5')
-AnswerComment.create!(content: 'paoioiwaj afawe', user_id: '1', answer_id: '5')
-AnswerComment.create!(content: 'a ojeowijf de', user_id: '2', answer_id: '3')
-AnswerComment.create!(content: 'skla ioioasjh', user_id: '3', answer_id: '2')
-AnswerComment.create!(content: 'mcsjs usw jdu', user_id: '4', answer_id: '1')
-AnswerComment.create!(content: 'iak ljsdakio hjl asdfa', user_id: '5', answer_id: '4')
-AnswerComment.create!(content: 'wioj jsd iooi jaoj', user_id: '1', answer_id: '4')
-AnswerComment.create!(content: 'hello', user_id: '2', answer_id: '2')
-AnswerComment.create!(content: 'goodbye', user_id: '3', answer_id: '3')
+# AnswerComment.create!(content: 'iajuh ioj', user_id: '1', answer_id: '2', question_id: '2')
+# AnswerComment.create!(content: 'ia wejioisdj da', user_id: '2', answer_id: '1', question_id: '1')
+# AnswerComment.create!(content: 'ioja hjsaioj adf', user_id: '3', answer_id: '3', question_id: '3')
+# AnswerComment.create!(content: 'pa ojak jo', user_id: '4', answer_id: '4', question_id: '4')
+# AnswerComment.create!(content: 'wiohj oaj', user_id: '5', answer_id: '5', question_id: '5')
+# AnswerComment.create!(content: 'paoioiwaj afawe', user_id: '1', answer_id: '5', question_id: '5')
+# AnswerComment.create!(content: 'a ojeowijf de', user_id: '2', answer_id: '3', question_id: '3')
+# AnswerComment.create!(content: 'skla ioioasjh', user_id: '3', answer_id: '2', question_id: '2'
+# AnswerComment.create!(content: 'mcsjs usw jdu', user_id: '4', answer_id: '1', question_id: '1')
+# AnswerComment.create!(content: 'iak ljsdakio hjl asdfa', user_id: '5', answer_id: '4', question_id: '4')
+# AnswerComment.create!(content: 'wioj jsd iooi jaoj', user_id: '1', answer_id: '4', question_id: '4')
+# AnswerComment.create!(content: 'hello', user_id: '2', answer_id: '2', question_id: '2')
+# AnswerComment.create!(content: 'goodbye', user_id: '3', answer_id: '3', question_id: '3')
 
-puts "#{AnswerComment.count} comments created"
+# puts "#{AnswerComment.count} comments created"

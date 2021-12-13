@@ -34,6 +34,6 @@ class AnswerCommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content, :user_id, :answer_id)
+    params.require(:comment).permit(:content, :user_id, :answer_id, :question_id)
   end
 end

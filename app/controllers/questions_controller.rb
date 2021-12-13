@@ -29,8 +29,6 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    # @answer_comments.destroy
-    @answers.destroy
     @question.destroy
   end
 
