@@ -57,7 +57,7 @@ export const getUsers = async () => {
 
 export const getQuestion = async (id) => {
   try {
-    const resp = await api.post(`/questions/${id}`)
+    const resp = await api.get(`/questions/${id}`)
     return resp.data
   } catch (error) {
     return error

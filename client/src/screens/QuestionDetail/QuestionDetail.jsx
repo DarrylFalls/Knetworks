@@ -14,7 +14,7 @@ const QuestionDetail = ({loggedIn, user, users}) => {
       setQuestion(getQ)
     }
     fetchQuestion()
-  })
+  }, [])
   return (
     <div>
       <div>{question?.content}</div>
