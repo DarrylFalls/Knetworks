@@ -15,19 +15,23 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [users, setUsers] = useState('')
   const [user, setUser] = useState('')
-  const [toggle, setToggle] = useState(true)
+  const [categories, setCategories] = useState('')
+  const [userToggle, setUserToggle] = useState(true)
+  const [questionToggle, setQuestionToggle] = useState(true)
+
+
   return (
     <div className="App">
       <Layout loggedIn={loggedIn} user={user}>
         <Routes>
           <Route path='/' exact element={<Home loggedIn={loggedIn}/>} />
           <Route path='/login' element={<Login setLoggedIn={setLoggedIn} setUser={setUser}/>} />
-          <Route path='/sign-up' element={<SignUp setLoggedIn={setLoggedIn} setUser={setUser} />} />
+          <Route path='/sign-up' element={<SignUp setLoggedIn={setLoggedIn} setUser={setUser} setUserToggle={setUserToggle} userToggle={userToggle} />} />
           <Route path='/welcome' element={<Welcome user={user}/>} />
-          <Route path='/categories' element={<Categories />} />
-          <Route path='/categories/:id' element={<CategoryQuestions loggedIn={loggedIn}/>} />
-          <Route path='/question/:id' element={<QuestionDetail loggedIn={loggedIn} user={user} users={users} setToggle={setToggle} toggle={toggle} />} />
-          <Route path='/post_question' element={<CreateQuestion loggedIn={loggedIn} user={user} users={users} setToggle={setToggle} toggle={toggle} />} />
+          <Route path='/categories' element={<Categories categories={categories}/>} />
+          <Route path='/categories/:id' element={<CategoryQuestions loggedIn={loggedIn} categories={categories}/>} />
+          <Route path='/question/:id' element={<QuestionDetail loggedIn={loggedIn} user={user} users={users} />} />
+          <Route path='/post_question' element={<CreateQuestion loggedIn={loggedIn} user={user} users={users} setQuestionToggle={setQuestionToggle} questionToggle={questionToggle} />} />
         </Routes>
       </Layout>
     </div>
