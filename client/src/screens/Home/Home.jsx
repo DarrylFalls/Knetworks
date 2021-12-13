@@ -2,7 +2,10 @@
 
 const Home = () => {
   return (
-    <div>Home Page</div>
+    <div>
+      <div>home page</div>
+      <Link to='/categories'>Pick a category</Link>
+    </div>
   )
 }
 

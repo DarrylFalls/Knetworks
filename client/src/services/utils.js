@@ -10,7 +10,7 @@ export const getCategories = async () => {
   }
 }
 
-export const signUp = async (credentials) => {
+export const signUp = async (registerData) => {
   try {
     const resp = await api.post('/users/', { user: registerData });
     localStorage.setItem('token', resp.data.token);
@@ -25,7 +25,7 @@ export const signOut = () => {
   localStorage.clear()
 }
 
-export const login = async (credentials) => {
+export const login = async (loginData ) => {
   try {
     const resp = await api.post('/auth/login', { authentication: loginData });
     localStorage.setItem('token', resp.data.token);

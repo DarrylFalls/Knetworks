@@ -1,8 +1,16 @@
 
 
-const Categories = () => {
+const Categories = ({categories}) => {
   return (
-    <div>Categories</div>
+    <div>
+      <div>Categories</div>
+      {
+      categories.map((category) => (
+        <div>
+          
+        </div>
+      ))}
+    </div>
   )
 }
 
