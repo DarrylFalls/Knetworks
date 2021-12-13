@@ -51,41 +51,81 @@ export const getQuestions = async (data) => {
 }
 
 export const getAnswerAndComments = async (data) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const postQuestion = async (data) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const postAnswer = async (data) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const postComment = async (data) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const editQuestion = async (id, data) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const editAnswer = async (id, data) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const editComment = async (id, data) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const deleteQuestion = async (id) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const deleteAnswer = async (id) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
 
 export const deleteComment = async (id) => {
+  try {
 
+  } catch (error) {
+    return error
+  }
 }
