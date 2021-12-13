@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import { getQuestion } from '../../services/utils'
+import Answer from '../../components/Answer/Answer'
 
-const QuestionDetail = ({}) => {
+const QuestionDetail = ({loggedIn, user, users}) => {
   const { id } = useParams()
   const [question, setQuestion] = useState('')
   const [answerToggle, setAnswerToggle] = useState(true)
@@ -19,7 +20,7 @@ const QuestionDetail = ({}) => {
       <div>{question?.content}</div>
       <div>{question.answers?.map((answer) => (
         <div>
-          <Answer id={answer.id}/>
+          <Answer id={answer.id} answerToggle={answerToggle} setAnswerToggle={setAnswerToggle} users={users} user={user}/>
         </div>
       ))}</div>
     </div>

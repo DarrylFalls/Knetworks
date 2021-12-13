@@ -64,7 +64,7 @@ export const getQuestion = async (id) => {
   }
 }
 
-export const getAnswerAndComments = async (id, data) => {
+export const getAnswerAndComments = async (id) => {
   try {
     const resp = await api.get(`/answers/${id}`)
     return resp.data
