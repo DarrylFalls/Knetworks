@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 
 const CategoryQuestions = ({ categories }) => {
@@ -13,7 +13,7 @@ const CategoryQuestions = ({ categories }) => {
   return (
     <div>
       <div>{category?.name}</div>
-      {category?.questions.map((question) => (
+      {category.questions?.map((question) => (
         <Link to={`/question/${question.id}`}>
           <div>{question.content}</div>
         </Link>

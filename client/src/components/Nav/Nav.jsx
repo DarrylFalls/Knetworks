@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 const Nav = ({loggedIn}) => {
   return (
     <div>
-      <Menu />
-      <div>Navbar</div>
-      <Link to='/login'>Login/Sign Up</Link>
+      <div><Menu /></div>
+      <div><Link to='/'>Knetworks</Link></div>
+      <div><Link to='/login'>Login/Sign Up</Link></div>
     </div>
   )
 }
