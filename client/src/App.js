@@ -10,6 +10,7 @@ import CategoryQuestions from './screens/CategoryQuestions/CategoryQuestions';
 import QuestionDetail from './screens/QuestionDetail/QuestionDetail';
 import CreateQuestion from './screens/CreateQuestion/CreateQuestion';
 import {useState, useEffect} from 'react'
+import { getCategories, getUsers } from './services/utils';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -19,6 +20,21 @@ function App() {
   const [userToggle, setUserToggle] = useState(true)
   const [questionToggle, setQuestionToggle] = useState(true)
 
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const allUsers = await getUsers()
+      setUsers(allUsers)
+    }
+    fetchUsers()
+  }, [userToggle])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const allCats = await getCategories()
+      setCategories(allCats)
+    }
+    fetchCategories()
+  }, [])
 
   return (
     <div className="App">
