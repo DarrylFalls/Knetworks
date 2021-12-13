@@ -64,9 +64,10 @@ export const getQuestions = async (data) => {
   }
 }
 
-export const getAnswerAndComments = async (data) => {
+export const getAnswerAndComments = async (id, data) => {
   try {
-
+    const resp = await api.get(`/answers/${id}`)
+    return resp.data
   } catch (error) {
     return error
   }
@@ -74,7 +75,8 @@ export const getAnswerAndComments = async (data) => {
 
 export const postQuestion = async (data) => {
   try {
-
+    const resp = await api.post('/questions', data)
+    return resp.data
   } catch (error) {
     return error
   }
@@ -82,7 +84,8 @@ export const postQuestion = async (data) => {
 
 export const postAnswer = async (data) => {
   try {
-
+    const resp = await api.post('/answers', data)
+    return resp.data
   } catch (error) {
     return error
   }
@@ -90,7 +93,8 @@ export const postAnswer = async (data) => {
 
 export const postComment = async (data) => {
   try {
-
+    const resp = await api.post('/answer_comments', data)
+    return resp.data
   } catch (error) {
     return error
   }
@@ -98,7 +102,8 @@ export const postComment = async (data) => {
 
 export const editQuestion = async (id, data) => {
   try {
-
+    const resp = await api.put(`/questions/${id}`, data)
+    return resp.data
   } catch (error) {
     return error
   }
@@ -106,7 +111,8 @@ export const editQuestion = async (id, data) => {
 
 export const editAnswer = async (id, data) => {
   try {
-
+    const resp = await api.put(`/answers/${id}`, data)
+    return resp.data
   } catch (error) {
     return error
   }
@@ -114,7 +120,8 @@ export const editAnswer = async (id, data) => {
 
 export const editComment = async (id, data) => {
   try {
-
+    const resp = await api.put(`/answer_comments/${id}`, data)
+    return resp.data
   } catch (error) {
     return error
   }
@@ -122,7 +129,8 @@ export const editComment = async (id, data) => {
 
 export const deleteQuestion = async (id) => {
   try {
-
+    const resp = await api.delete(`/questions/${id}`)
+    return resp
   } catch (error) {
     return error
   }
@@ -130,7 +138,8 @@ export const deleteQuestion = async (id) => {
 
 export const deleteAnswer = async (id) => {
   try {
-
+    const resp = await api.delete(`/answers/${id}`)
+    return resp
   } catch (error) {
     return error
   }
@@ -138,7 +147,8 @@ export const deleteAnswer = async (id) => {
 
 export const deleteComment = async (id) => {
   try {
-
+    const resp = await api.delete(`/answer_comments/${id}`)
+    return resp
   } catch (error) {
     return error
   }
