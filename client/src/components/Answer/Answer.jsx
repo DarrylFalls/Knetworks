@@ -4,15 +4,21 @@ import AnswerComment from '../AnswerComment/AnswerComment'
 
 
 
-const Answer = ({ id, answerToggle, setAnswerToggle, users, user_id, loggedIn }) => {
+const Answer = ({ answer_id, answerToggle, setAnswerToggle, users, user_id, loggedIn }) => {
   const [answer, setAnswer] = useState('')
   const [user, setUser] = useState('')
   const [commentToggle, setCommentToggle] = useState(true)
   const [addingComment, setAddingComment] = useState(false)
+  const [postCommentFormData, setPostCommentFormData] = useState({
+    content: '',
+    user_id: '',
+    answer_id: '',
+    question_id: ''
+  })
 
   useEffect(() => {
     const fetchAnswer = async () => {
-      const data = await getAnswerAndComments(id)
+      const data = await getAnswerAndComments(answer_id)
       setAnswer(data)
     }
     fetchAnswer()
@@ -29,8 +35,12 @@ const Answer = ({ id, answerToggle, setAnswerToggle, users, user_id, loggedIn })
     }
   }
 
+  const handleComment = () => {
+
+  }
+
   const addComment = async () => {
-    
+
   }
   return (
     <div>
@@ -45,7 +55,7 @@ const Answer = ({ id, answerToggle, setAnswerToggle, users, user_id, loggedIn })
       {loggedIn && <div onClick={() => setAddingComment}>add comment</div>}
       {addingComment &&
         <div>
-          <form onSubmit={addComment}>
+          <form onSubmit={handleComment}>
             <input />
           </form>
         </div>}

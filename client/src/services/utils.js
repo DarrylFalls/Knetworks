@@ -75,7 +75,7 @@ export const getAnswerAndComments = async (id) => {
 
 export const postQuestion = async (data) => {
   try {
-    const resp = await api.post('/questions', data)
+    const resp = await api.post('/questions', { question: data })
     return resp.data
   } catch (error) {
     return error
@@ -84,7 +84,7 @@ export const postQuestion = async (data) => {
 
 export const postAnswer = async (data) => {
   try {
-    const resp = await api.post('/answers', data)
+    const resp = await api.post('/answers', { answer: data })
     return resp.data
   } catch (error) {
     return error
@@ -93,7 +93,7 @@ export const postAnswer = async (data) => {
 
 export const postComment = async (data) => {
   try {
-    const resp = await api.post('/answer_comments', data)
+    const resp = await api.post('/answer_comments', { comment: data })
     return resp.data
   } catch (error) {
     return error
@@ -102,7 +102,7 @@ export const postComment = async (data) => {
 
 export const editQuestion = async (id, data) => {
   try {
-    const resp = await api.put(`/questions/${id}`, data)
+    const resp = await api.put(`/questions/${id}`, { question: data })
     return resp.data
   } catch (error) {
     return error
@@ -111,7 +111,7 @@ export const editQuestion = async (id, data) => {
 
 export const editAnswer = async (id, data) => {
   try {
-    const resp = await api.put(`/answers/${id}`, data)
+    const resp = await api.put(`/answers/${id}`, { answer: data })
     return resp.data
   } catch (error) {
     return error
@@ -120,7 +120,7 @@ export const editAnswer = async (id, data) => {
 
 export const editComment = async (id, data) => {
   try {
-    const resp = await api.put(`/answer_comments/${id}`, data)
+    const resp = await api.put(`/answer_comments/${id}`, { comment: data })
     return resp.data
   } catch (error) {
     return error
