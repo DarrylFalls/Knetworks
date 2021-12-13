@@ -20,7 +20,7 @@ const QuestionDetail = ({loggedIn, user, users}) => {
       <div>{question?.content}</div>
       <div>{question.answers?.map((answer) => (
         <div>
-          <Answer id={answer.id} answerToggle={answerToggle} setAnswerToggle={setAnswerToggle} users={users} user={user}/>
+          <Answer id={answer.id} answerToggle={answerToggle} setAnswerToggle={setAnswerToggle} users={users} user={user} user_id={answer.user_id} loggedIn={loggedIn}/>
         </div>
       ))}</div>
     </div>
