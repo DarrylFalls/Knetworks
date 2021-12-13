@@ -23,7 +23,7 @@ export const signUp = async (credentials) => {
 }
 
 export const signOut = () => {
-
+  localStorage.clear()
 }
 
 export const login = async (credentials) => {
@@ -37,7 +37,16 @@ export const login = async (credentials) => {
   }
 }
 
-export const verify = () => {
+export const verify = async () => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    const res = await api.get('/auth/verify')
+    return res.data
+  }
+  return false
+}
+
+export const getUsers = async () => {
 
 }
 
