@@ -13,10 +13,10 @@ export const getCategories = async () => {
 
 export const signUp = async (credentials) => {
   try {
-    const resp = await api.post('/users', credentials)
-    localStorage.setItem('token', resp.data.token)
-    const user = jwtDecode(resp.data.token)
-    return user
+    const resp = await api.post('/users/', { user: registerData });
+    localStorage.setItem('token', resp.data.token);
+    api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+    return resp.data.user;
   } catch (error) {
     throw error
   }
@@ -28,22 +28,23 @@ export const signOut = () => {
 
 export const login = async (credentials) => {
   try {
-    const resp = await api.post('/auth/login', credentials)
-    localStorage.setItem('token', resp.data.token)
-    const user = jwtDecode(resp.data.token)
-    return user
+    const resp = await api.post('/auth/login', { authentication: loginData });
+    localStorage.setItem('token', resp.data.token);
+    api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+    return resp.data.user;
   } catch (error) {
-    return error
+    throw error
   }
 }
 
 export const verify = async () => {
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token');
   if (token) {
-    const resp = await api.get('/auth/verify')
-    return resp.data
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+    const resp = await api.get('/auth/verify');
+    return resp.data;
   }
-  return false
+  return null;
 }
 
 export const getUsers = async () => {
