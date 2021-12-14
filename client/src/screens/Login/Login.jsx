@@ -33,6 +33,8 @@ const Login = ({ setLoggedIn, setUser }) => {
           <br />
           <label>password</label>
           <input type='text' value={formData.password} onChange={handleChange} />
+          <br />
+          <input type='submit' value='Login' />
         </form>
       </div>
       <div>
