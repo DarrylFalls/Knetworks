@@ -4,21 +4,32 @@ import { signOut } from "../../services/utils"
 import {useState} from 'react'
 
 const Nav = ({ loggedIn, setLoggedIn, user }) => {
-  const [navigateToggle, setNavigateToggle] = useState(false)
+  const [navigateToggleLogout, setNavigateToggleLogout] = useState(false)
+  // const [navigateToggleQuestion, setNavigateToggleQuestion] = useState(false)
+
   const navigate = useNavigate()
   const handleLogout = () => {
     signOut()
     setLoggedIn(false)
-    setNavigateToggle(true)
+    setNavigateToggleLogout(true)
   }
 
-  if (navigateToggle) {
+  if (navigateToggleLogout) {
     navigate('/')
-    setNavigateToggle(false)
+    setNavigateToggleLogout(false)
   }
+
+  // if (navigateToggleQuestion) {
+  //   navigate('/post-question')
+  //   setNavigateToggleQuestion(false)
+  // }
+
   return (
     <div>
-      <div><Menu /></div>
+      {/* <div><Menu /></div> */}
+      {loggedIn && <div>
+        <Link to='/post-question'>Ask A Question</Link>
+      </div>}
       <div><Link to='/'>Knetworks</Link></div>
       {loggedIn ?
         <div>
