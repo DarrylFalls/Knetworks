@@ -8,7 +8,7 @@ const Answer = ({ answer_id, answerToggle, setAnswerToggle, users, user_id, logg
   const [answer, setAnswer] = useState('')
   const [answerUser, setAnswerUser] = useState('')
   const [commentToggle, setCommentToggle] = useState(true)
-  const [addingComment, setAddingComment] = useState(false)
+  const [addingAnswer, setAddingAnswer] = useState(false)
   const [postAnswerFormData, setPostAnswerFormData] = useState({
     content: '',
     user_id: '',
@@ -54,10 +54,10 @@ const Answer = ({ answer_id, answerToggle, setAnswerToggle, users, user_id, logg
           <AnswerComment content={comment.content} user_id={comment.user_id} users={users} loggedIn={loggedIn} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
         </div>
       ))}</div>
-      {loggedIn && <div onClick={() => setAddingComment}>add answer</div>}
-      {addingComment &&
+      {loggedIn && <div onClick={() => setAddingAnswer}>add answer</div>}
+      {addingAnswer &&
         <div>
-          <form onSubmit={handleAddComment}>
+          <form onSubmit={handleAddAnswer}>
             <input />
           </form>
         </div>}

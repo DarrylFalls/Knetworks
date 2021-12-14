@@ -47,7 +47,7 @@ function App() {
           <Route path='/categories' element={<Categories categories={categories}/>} />
           <Route path='/categories/:id' element={<CategoryQuestions loggedIn={loggedIn} categories={categories}/>} />
           <Route path='/question/:id' element={<QuestionDetail loggedIn={loggedIn} user={user} users={users} />} />
-          <Route path='/post_question' element={<CreateQuestion loggedIn={loggedIn} user={user} users={users} setQuestionToggle={setQuestionToggle} questionToggle={questionToggle} />} />
+          <Route path='/post-question' element={<CreateQuestion loggedIn={loggedIn} user={user} users={users} setQuestionToggle={setQuestionToggle} questionToggle={questionToggle} />} />
         </Routes>
       </Layout>
     </div>

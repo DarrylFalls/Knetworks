@@ -7,7 +7,7 @@ const QuestionDetail = ({loggedIn, user, users}) => {
   const { id } = useParams()
   const [question, setQuestion] = useState('')
   const [answerToggle, setAnswerToggle] = useState(true)
-  cosnt [questionToggle, setQuestionToggle] = useState(true)
+  const [questionToggle, setQuestionToggle] = useState(true)
 
   useEffect(() => {
     const fetchQuestion = async () => {
