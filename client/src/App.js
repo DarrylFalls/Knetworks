@@ -29,11 +29,6 @@ function App() {
   }, [userToggle])
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      const allCats = await getCategories()
-      setCategories(allCats)
-    }
-    fetchCategories()
     const checkUser = async () => {
       const isUser = await verify()
       if (isUser) {
@@ -43,6 +38,14 @@ function App() {
     }
     checkUser()
   }, [])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const allCats = await getCategories()
+      setCategories(allCats)
+    }
+    fetchCategories()
+  }, [questionToggle])
 
   return (
     <div className="App">

@@ -1,6 +1,9 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
+import {useNavigate} from 'react-router-dom'
+import { postQuestion } from '../../services/utils'
 
-const CreateQuestion = ({user}) => {
+const CreateQuestion = ({ user, setQuestionToggle, questionToggle }) => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     content: '',
     user_id: '',
@@ -22,9 +25,18 @@ const CreateQuestion = ({user}) => {
     }))
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const newQuestion = await postQuestion(formData)
+    if (newQuestion) {
+      setQuestionToggle(!questionToggle)
+      navigate(`/categories${category_id}`)
+    }
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <lable>Pick a category.</lable>
           <select name='category_id' value={category_id} onChange={handleChange}>
             <option value=''>Category...</option>
