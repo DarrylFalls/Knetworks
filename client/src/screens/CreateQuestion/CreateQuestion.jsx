@@ -30,7 +30,7 @@ const CreateQuestion = ({ user, setQuestionToggle, questionToggle }) => {
     const newQuestion = await postQuestion(formData)
     if (newQuestion) {
       setQuestionToggle(!questionToggle)
-      navigate(`/categories${category_id}`)
+      navigate(`/`)
     }
   }
 
