@@ -25,7 +25,7 @@ export const signOut = () => {
   localStorage.clear()
 }
 
-export const login = async (loginData ) => {
+export const login = async (loginData) => {
   try {
     const resp = await api.post('/auth/login', { authentication: loginData });
     localStorage.setItem('token', resp.data.token);
