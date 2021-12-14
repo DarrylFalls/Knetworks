@@ -27,7 +27,7 @@ export const signOut = () => {
 
 export const login = async (loginData) => {
   try {
-    const resp = await api.post('/auth/login', { authentication: loginData });
+    const resp = await api.post('/auth/login', { "authentication": loginData });
     localStorage.setItem('token', resp.data.token);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
     return resp.data.user;

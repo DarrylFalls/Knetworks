@@ -54,7 +54,7 @@ const Answer = ({ answer_id, answerToggle, setAnswerToggle, users, user_id, logg
           <AnswerComment content={comment.content} user_id={comment.user_id} users={users} loggedIn={loggedIn} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
         </div>
       ))}</div>
-      {loggedIn && <div onClick={() => setAddingAnswer}>add answer</div>}
+      {loggedIn && addingAnswer == false ? <div onClick={() => setAddingAnswer(true)}>add answer</div>: null}
       {addingAnswer &&
         <div>
           <form onSubmit={handleAddAnswer}>

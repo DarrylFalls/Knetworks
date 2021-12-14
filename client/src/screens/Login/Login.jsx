@@ -1,11 +1,15 @@
-import {Link} from 'react-router-dom'
-import { login } from '../../services/utils';
+import {Link, Navigate} from 'react-router-dom'
+import { login } from '../../services/utils'
+import {useState} from 'react'
 
 const Login = ({ setLoggedIn, setUser }) => {
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
   })
+  const [navigate, setNavigate] = useState(false)
+
+  const { email, password } = formData
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,20 +23,26 @@ const Login = ({ setLoggedIn, setUser }) => {
     e.preventDefault()
     const submitUser = await login(formData)
     if (submitUser) {
-      setUser(submitUser.user)
+      setUser(submitUser)
       setLoggedIn(true)
+      console.log(submitUser)
+      setNavigate(true)
     }
+  }
+
+  if (navigate == true) {
+    return <Navigate to='/'/>
   }
 
   return (
     <div>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
           <label>email</label>
-          <input type='text' value={formData.email} onChange={handleChange} />
+          <input type='text' name='email' value={email} onChange={handleChange} />
           <br />
           <label>password</label>
-          <input type='text' value={formData.password} onChange={handleChange} />
+          <input type='text' name='password' value={password} onChange={handleChange} />
           <br />
           <input type='submit' value='Login' />
         </form>

@@ -10,7 +10,7 @@ import CategoryQuestions from './screens/CategoryQuestions/CategoryQuestions';
 import QuestionDetail from './screens/QuestionDetail/QuestionDetail';
 import CreateQuestion from './screens/CreateQuestion/CreateQuestion';
 import {useState, useEffect} from 'react'
-import { getCategories, getUsers } from './services/utils';
+import { getCategories, getUsers, verify } from './services/utils';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -34,11 +34,19 @@ function App() {
       setCategories(allCats)
     }
     fetchCategories()
+    const checkUser = async () => {
+      const isUser = await verify()
+      if (isUser) {
+        setUser(isUser)
+        setLoggedIn(true)
+      }
+    }
+    checkUser()
   }, [])
 
   return (
     <div className="App">
-      <Layout loggedIn={loggedIn} user={user}>
+      <Layout loggedIn={loggedIn} user={user} setLoggedIn={setLoggedIn}>
         <Routes>
           <Route path='/' exact element={<Home loggedIn={loggedIn}/>} />
           <Route path='/login' element={<Login setLoggedIn={setLoggedIn} setUser={setUser}/>} />
