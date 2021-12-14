@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
-import { getAnswerAndComments } from '../../services/utils'
+import { getAnswerAndComments, postAnswer } from '../../services/utils'
 import AnswerComment from '../AnswerComment/AnswerComment'
 
 
 
 const Answer = ({ answer_id, answerToggle, setAnswerToggle, users, user_id, loggedIn }) => {
   const [answer, setAnswer] = useState('')
-  const [user, setUser] = useState('')
+  const [answerUser, setAnswerUser] = useState('')
   const [commentToggle, setCommentToggle] = useState(true)
   const [addingComment, setAddingComment] = useState(false)
-  const [postCommentFormData, setPostCommentFormData] = useState({
+  const [postAnswerFormData, setPostAnswerFormData] = useState({
     content: '',
     user_id: '',
     answer_id: '',
@@ -23,7 +23,7 @@ const Answer = ({ answer_id, answerToggle, setAnswerToggle, users, user_id, logg
     }
     fetchAnswer()
     const userData = users.find(u => u.id == user_id)
-    setUser(userData)
+    setAnswerUser(userData)
     console.log(userData)
   }, [commentToggle])
 
@@ -35,27 +35,29 @@ const Answer = ({ answer_id, answerToggle, setAnswerToggle, users, user_id, logg
     }
   }
 
-  const handleComment = () => {
-
+  const handleAddAnswer = (e) => {
+    e.preventDefault()
+    addAnswer()
+    setAnswerToggle(!answerToggle)
   }
 
-  const addComment = async () => {
-
+  const addAnswer= async () => {
+    await postAnswer(postAnswerFormData)
   }
   return (
     <div>
       <div>{answer?.content}</div>
-      <div>- {user && user.username}</div>
+      <div>- {answerUser && answerUser.username}</div>
       <div>{answer && numOfComments()} comments</div>
       <div>{answer.comments?.map((comment) => (
         <div>
-          <AnswerComment content={comment.content} user_id={comment.user_id} users={users} />
+          <AnswerComment content={comment.content} user_id={comment.user_id} users={users} loggedIn={loggedIn} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
         </div>
       ))}</div>
-      {loggedIn && <div onClick={() => setAddingComment}>add comment</div>}
+      {loggedIn && <div onClick={() => setAddingComment}>add answer</div>}
       {addingComment &&
         <div>
-          <form onSubmit={handleComment}>
+          <form onSubmit={handleAddComment}>
             <input />
           </form>
         </div>}
