@@ -12,6 +12,9 @@ const CategoryQuestions = ({ categories }) => {
 
   return (
     <div>
+      <div>
+        <Link to='/categories'>back to categories</Link>
+      </div>
       <div>{category?.name}</div>
       {category.questions?.map((question) => (
         <div>

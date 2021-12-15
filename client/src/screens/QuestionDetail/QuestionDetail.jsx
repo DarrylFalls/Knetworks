@@ -1,9 +1,10 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import {useState, useEffect} from 'react'
-import { editQuestion, getQuestion, postAnswer } from '../../services/utils'
+import { deleteQuestion, editQuestion, getQuestion, postAnswer } from '../../services/utils'
 import Answer from '../../components/Answer/Answer'
 
 const QuestionDetail = ({ loggedIn, user, users }) => {
+  const navigate = useNavigate()
   const { id } = useParams()
   const [question, setQuestion] = useState('')
   const [answerToggle, setAnswerToggle] = useState(true)
@@ -12,6 +13,7 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
   const [questionContent, setQuestionContent] = useState('')
   const [answerContent, setAnswerContent] = useState('')
   const [addingAnswer, setAddingAnswer] = useState(false)
+  // const [category_id, setCategory_id] = useState('')
 
   useEffect(() => {
     const fetchQuestion = async () => {
@@ -23,6 +25,7 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
 
   useEffect(() => {
     setQuestionContent(question?.content)
+    // setCategory_id(question?.category_id)
   }, [question])
 
   const handleEditClick = () => {
@@ -59,6 +62,13 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
     }
   }
 
+  const handleDeleteQuestion = async () => {
+    const oldQuestion = await deleteQuestion(id)
+    if (oldQuestion) {
+      navigate(`/`)
+    }
+  }
+
   return (
     <div>
       {edittingQuestion ?
@@ -68,8 +78,9 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
             <input type='submit' />
           </form>
         </div>
-      : <div>{question?.content}</div>}
-      {loggedIn && user?.id == question.user_id && edditingQuestion == false ? <div onClick={handleEditClick}>edit</div> : null}
+        : <div>{question?.content}</div>}
+      {edittingQuestion && <div onClick={handleDeleteQuestion} >delete</div>}
+      {loggedIn && user?.id == question.user_id && edittingQuestion == false ? <div onClick={handleEditClick}>edit</div> : null}
       <div>{question.answers?.map((answer) => (
         <div>
           <Answer answer_id={answer.id} answerToggle={answerToggle} setAnswerToggle={setAnswerToggle} users={users} user={user} user_id={answer.user_id} loggedIn={loggedIn} question_id={id} />
