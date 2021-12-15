@@ -1,0 +1,32 @@
+
+
+.create-question-display-div {
+  margin-top: 20vh;
+  /* padding: ; */
+  background: rgba(0, 0, 0, 0.7);
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  
+}
+
+.create-question-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-question-form-category-label {
+  font-size: 25px;
+}
+
+.create-question-form-question-label {
+  font-size: 25px;
+  margin-top: 3vh;
+}
+
+.create-question-content-input {
+  height: 30px;
+}
