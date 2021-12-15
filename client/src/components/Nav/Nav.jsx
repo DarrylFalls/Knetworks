@@ -1,7 +1,8 @@
 import Menu from "../HamburgerMenu/HamburgerMenu"
 import {Link, useNavigate} from 'react-router-dom'
 import { signOut } from "../../services/utils"
-import {useState} from 'react'
+import { useState } from 'react'
+import './Nav.css'
 
 const Nav = ({ loggedIn, setLoggedIn, user }) => {
   const [navigateToggleLogout, setNavigateToggleLogout] = useState(false)
@@ -27,9 +28,9 @@ const Nav = ({ loggedIn, setLoggedIn, user }) => {
   return (
     <div className='main-nav-div'>
       {/* <div className='nav-menu-button-div'><Menu /></div> */}
-      {loggedIn && <div className='nav-post-question-link-div'>
-        <Link to='/post-question'>Ask A Question</Link>
-      </div>}
+      <div className='nav-post-question-link-div'>
+        {loggedIn && <Link to='/post-question'>Ask A Question</Link>}
+      </div>
       <div className='nav-home-link-div'><Link to='/'>Knetworks</Link></div>
       {loggedIn ?
         <div className='nav-user-and-logout-display-div'>

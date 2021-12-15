@@ -49,6 +49,7 @@ function App() {
 
   return (
     <div className="App">
+      <video src='/videos/main-background.mp4' loop autoPlay muted playsinline id='network-vid' className='background-video'></video>
       <Layout loggedIn={loggedIn} user={user} setLoggedIn={setLoggedIn}>
         <Routes>
           <Route path='/' exact element={<Home loggedIn={loggedIn}/>} />

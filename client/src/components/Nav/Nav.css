@@ -1,0 +1,30 @@
+
+
+.main-nav-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  height: 9vh;
+}
+
+.nav-home-link-div{
+  display: flex;
+  justify-self: center;
+}
+
+.nav-user-and-logout-display-div{
+  display: flex;
+}
+
+.nav-username-div{
+  margin-right: 10px;
+}
+
+.nav-logout-button-div{
+  margin-right: 10px;
+}
+
+.nav-post-question-link-div{
+  margin-left: 10px;
+}
