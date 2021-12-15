@@ -68,35 +68,34 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
   }
 
   return (
-    <div>
+    <div className='main-answer-div'>
       {edittingAnswer ? 
-        <div>
-          <form onSubmit={handleEditAnswer}>
-            <input type='text' value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} />
-            <input type='submit' />
+        <div className='edit-answer-form-div'>
+          <form onSubmit={handleEditAnswer} className='edit-answer-form'>
+            <input type='text' value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} className='edit-answer-content-input'/>
+            <input type='submit' className='edit-answer-submit-button'/>
           </form>
         </div>
-        : <div>{answer?.content}</div>}
-      {edittingAnswer && <div onClick={handleDeleteAnswer} >delete</div>}
-      <div>- {answerUser && answerUser.username}</div>
-      {loggedIn && edittingAnswer == false && user_id == user.id ? <div onClick={() => setEdittingAnswer(true)}>edit answer</div> : null}
-      <div onClick={() => setShowComments(!showComments)}>{commentNum} {commentNum === 1 ? 'comment' : 'comments'}</div>
-      {showComments && <div>{answer.answer_comments?.map((comment) => (
-        <div>
+        : <div className='answer-content-display-div'>{answer?.content}</div>}
+      {edittingAnswer && <div onClick={handleDeleteAnswer} className='delete-answer-button'>delete</div>}
+      <div className='answer-username-div'>- {answerUser && answerUser.username}</div>
+      {loggedIn && edittingAnswer == false && user_id == user.id ? <div onClick={() => setEdittingAnswer(true)} className='edit-answer-button'>edit answer</div> : null}
+      <div onClick={() => setShowComments(!showComments)} className='num-of-comments-div'>{commentNum} {commentNum === 1 ? 'comment' : 'comments'}</div>
+      {showComments && <div className='comment-list-container-div'>{answer.answer_comments?.map((comment) => (
+        <div className='comment-list-div'>
           <AnswerComment comment_id={comment.id} content={comment.content} user_id={comment.user_id} users={users} user={user} loggedIn={loggedIn} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
         </div>
       ))}</div>}
-      {loggedIn && addingComment === false ? <div onClick={() => setAddingComment(true)}>add comment</div> : null}
+      {loggedIn && addingComment === false ? <div onClick={() => setAddingComment(true)} className='add-comment-button'>add comment</div> : null}
       {addingComment && 
-        <div>
-        <div>Add Your Comment</div>
-        <form onSubmit={handleAddComment}>
-          <input type='text' value={commentContent} onChange={(e) => setCommentContent(e.target.value)} />
-          <input type='submit' />
-        </form>
+        <div className='add-comment-container-div'>
+          <div className='add-comment-title-div'>Add Your Comment</div>
+          <form onSubmit={handleAddComment} className='add-comment-form'>
+            <input type='text' value={commentContent} onChange={(e) => setCommentContent(e.target.value)} className='add-comment-content-input'/>
+            <input type='submit' className='add-comment-submit-button' />
+          </form>
         </div>
       }
-      
     </div>
   )
 }

@@ -39,7 +39,7 @@ const AnswerComment = ({ content, user_id, users, loggedIn, commentToggle, setCo
     }
   }
   return (
-    <div>
+    <div className='main-comment-div'>
       <div>
         {edittingComment ?
           <div>
