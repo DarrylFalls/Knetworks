@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
-  before_action :set_answer, only: [:show, :update]
-  before_action :set_answer_group, only: :destroy
+  before_action :set_answer, only: [:show, :update, :destroy]
+
 
   def index
     @answers = Answer.where(question_id: answer_params[:question_id])
@@ -30,22 +30,13 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    @group.destroy
+    @answer.destroy
   end
 
   private
 
   def set_answer
     @answer = Answer.find(params[:id])
-  end
-
-  def set_answer_group
-    @answer = Answer.find(params[:id])
-    @answer_comments = AnswerComment.where(answer_id == params[:id])
-    @group = [
-      @answer_comments,
-      @answer
-    ]
   end
 
   def answer_params

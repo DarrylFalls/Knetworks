@@ -48,6 +48,8 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
     }
   }
 
+  
+
   const handleAddAnswer = async (e) => {
     e.preventDefault()
     const data = {

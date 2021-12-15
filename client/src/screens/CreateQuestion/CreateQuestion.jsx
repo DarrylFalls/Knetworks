@@ -37,7 +37,7 @@ const CreateQuestion = ({ user, setQuestionToggle, questionToggle }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <lable>Pick a category.</lable>
+        <label>Pick a category.</label>
           <select name='category_id' value={category_id} onChange={handleChange}>
             <option value=''>Category...</option>
             <option value='1'>Science</option>

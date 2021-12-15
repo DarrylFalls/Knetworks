@@ -1,19 +1,23 @@
 import { useState, useEffect } from 'react'
-import { editComment } from '../../services/utils'
+import { deleteComment, editComment } from '../../services/utils'
 
 
 const AnswerComment = ({ content, user_id, users, loggedIn, commentToggle, setCommentToggle, comment_id, user }) => {
   const [edittingComment, setEdittingComment] = useState(false)
   const [commentContent, setCommentContent] = useState('')
+  const [username, setUsername] = useState('')
 
   useEffect(() => {
     setCommentContent(content)
+    const getUsername = () => {
+      const name = users.find(u => u.id === user_id)
+      console.log(`user is ${username.username}`)
+      setUsername(name.username)
+    }
+    getUsername()
   }, [])
 
-  const getUsername = () => {
-    const username = users.find(user => user.id === user_id)
-    return username.username
-  }
+  
 
   const handleEditComment = async (e) => {
     e.preventDefault()
@@ -22,6 +26,14 @@ const AnswerComment = ({ content, user_id, users, loggedIn, commentToggle, setCo
     }
     const updatedComment = await editComment(comment_id, data)
     if (updatedComment) {
+      setEdittingComment(false)
+      setCommentToggle(!commentToggle)
+    }
+  }
+
+  const handleDelete = async () => {
+    const oldComment = await deleteComment(comment_id)
+    if (oldComment) {
       setEdittingComment(false)
       setCommentToggle(!commentToggle)
     }
@@ -36,8 +48,9 @@ const AnswerComment = ({ content, user_id, users, loggedIn, commentToggle, setCo
               <input type='submit' />
             </form>
           </div>
-          : <div>{content} -{getUsername}</div>}
-        {loggedIn && user_id == user.id && edittingComment === false}
+          : <div>{content} -{username}</div>}
+        {/* {edittingComment && <div onClick={handleDelete}>delete</div>} */}
+        {loggedIn && user_id == user.id && edittingComment === false ? <div onClick={() => setEdittingComment(true)}>edit</div> : null}
         {edittingComment && <div onClick={handleDelete}>delete</div>}
       </div>
     </div>

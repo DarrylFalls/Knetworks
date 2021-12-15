@@ -12,6 +12,8 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
   const [answerContent, setAnswerContent] = useState('')
   const [addingComment, setAddingComment] = useState(false)
   const [commentContent, setCommentContent] = useState('')
+  const [commentNum, setCommentNum] = useState(0)
+  const [showComments, setShowComments] = useState(false)
 
   useEffect(() => {
     const fetchAnswer = async () => {
@@ -26,22 +28,16 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
 
   useEffect(() => {
     setAnswerContent(answer?.content)
+    setCommentNum(answer.answer_comments?.length)
+    console.log(answer)
   }, [answer])
-
-  const numOfComments = () => {
-    if (answer.comments) {
-      return answer.comments.length
-    } else {
-      return "0"
-    }
-  }
 
   const handleEditAnswer = async (e) => {
     e.preventDefault()
     const data = {
       content: answerContent
     }
-    const updatedAns = await editAnswer(id, data)
+    const updatedAns = await editAnswer(answer_id, data)
     setQuestionToggle(!questionToggle)
   }
 
@@ -81,13 +77,13 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
       {edittingAnswer && <div onClick={handleDeleteAnswer} >delete</div>}
       <div>- {answerUser && answerUser.username}</div>
       {loggedIn && edittingAnswer == false && user_id == user.id ? <div onClick={() => setEdittingAnswer(true)}>edit answer</div> : null}
-      <div>{answer && numOfComments()} comments</div>
-      <div>{answer.comments?.map((comment) => (
+      <div onClick={() => setShowComments(!showComments)}>{commentNum} {commentNum === 1 ? 'comment' : 'comments'}</div>
+      {showComments && <div>{answer.answer_comments?.map((comment) => (
         <div>
           <AnswerComment comment_id={comment.id} content={comment.content} user_id={comment.user_id} users={users} user={user} loggedIn={loggedIn} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
         </div>
-      ))}</div>
-      {loggedIn && <div>add comment</div>}
+      ))}</div>}
+      {loggedIn && addingComment === false ? <div onClick={() => setAddingComment(true)}>add comment</div> : null}
       {addingComment && 
         <div>
         <div>Add Your Comment</div>
