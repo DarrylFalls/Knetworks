@@ -7,7 +7,7 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
   const navigate = useNavigate()
   const { id } = useParams()
   const [question, setQuestion] = useState('')
-  const [answerToggle, setAnswerToggle] = useState(true)
+  // const [answerToggle, setAnswerToggle] = useState(true)
   const [questionToggle, setQuestionToggle] = useState(true)
   const [edittingQuestion, setEdittingQuestion] = useState(false)
   const [questionContent, setQuestionContent] = useState('')
@@ -21,7 +21,7 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
       setQuestion(getQ)
     }
     fetchQuestion()
-  }, [answerToggle, questionToggle])
+  }, [questionToggle])
 
   useEffect(() => {
     setQuestionContent(question?.content)
@@ -83,7 +83,7 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
       {loggedIn && user?.id == question.user_id && edittingQuestion == false ? <div onClick={handleEditClick}>edit</div> : null}
       <div>{question.answers?.map((answer) => (
         <div>
-          <Answer answer_id={answer.id} answerToggle={answerToggle} setAnswerToggle={setAnswerToggle} users={users} user={user} user_id={answer.user_id} loggedIn={loggedIn} question_id={id} />
+          <Answer answer_id={answer.id} questionToggle={questionToggle} setQuestionToggle={setQuestionToggle} users={users} user={user} user_id={answer.user_id} loggedIn={loggedIn} question_id={id} />
         </div>
       ))}</div>
       {loggedIn && addingAnswer == false ? <div onClick={handleAnswerClick}>add answer</div> : null}
