@@ -9,7 +9,7 @@ const Categories = ({categories}) => {
         {categories.map((category) => (
           <div className='category-link-div'>
             <Link to={`/categories/${category.id}`} className='category-link'>
-              {category.name}
+              {category.name?.toUpperCase(0)}
             </Link>
           </div>
         ))}

@@ -61,6 +61,7 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
     if (newAns) {
       setQuestionToggle(!questionToggle)
       setAddingAnswer(false)
+      setAnswerContent('')
     }
   }
 

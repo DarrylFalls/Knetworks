@@ -38,6 +38,7 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
       content: answerContent
     }
     const updatedAns = await editAnswer(answer_id, data)
+    setEdittingAnswer(false)
     setQuestionToggle(!questionToggle)
   }
 
@@ -53,6 +54,8 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
     if (newComment) {
       setAddingComment(false)
       setQuestionToggle(!questionToggle)
+      setShowComments(true)
+      setCommentContent('')
     }
   }
 
