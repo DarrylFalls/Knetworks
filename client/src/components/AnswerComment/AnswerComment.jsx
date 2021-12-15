@@ -40,19 +40,18 @@ const AnswerComment = ({ content, user_id, users, loggedIn, commentToggle, setCo
   }
   return (
     <div className='main-comment-div'>
-      <div>
+      <div className='edit-comment-container-div'>
         {edittingComment ?
-          <div>
-            <form onSubmit={handleEditComment}>
-              <input type='text' value={commentContent} onChange={(e) => setCommentContent(e.target.value)} />
-              <input type='submit' />
+          <div className='edit-comment-form-div'>
+            <form onSubmit={handleEditComment} className='edit-comment-form'>
+              <input type='text' value={commentContent} onChange={(e) => setCommentContent(e.target.value)} className='edit-comment-content-input' />
+              <input type='submit' className='edit-comment-submit-button' />
             </form>
           </div>
-          : <div>{content} -{username}</div>}
-        {/* {edittingComment && <div onClick={handleDelete}>delete</div>} */}
-        {loggedIn && user_id == user.id && edittingComment === false ? <div onClick={() => setEdittingComment(true)}>edit</div> : null}
-        {edittingComment && <div onClick={handleDelete}>delete</div>}
+          : <div className='comment-content-display-div'>{content} -{username}</div>}
       </div>
+      {loggedIn && user_id == user.id && edittingComment === false ? <div onClick={() => setEdittingComment(true)} className='edit-comment-button'>edit</div> : null}
+      {edittingComment && <div onClick={handleDelete} className='delete-comment-button'>delete</div>}
     </div>
   )
 }
