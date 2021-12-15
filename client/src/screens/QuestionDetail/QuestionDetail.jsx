@@ -48,8 +48,6 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
     }
   }
 
-  
-
   const handleAddAnswer = async (e) => {
     e.preventDefault()
     const data = {
@@ -75,28 +73,28 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
   return (
     <div className='main-question-detail-div'>
       {edittingQuestion ?
-        <div>
-          <form onSubmit={handleEditQuestion}>
-            <input type='text' value={questionContent} onChange={(e) => setQuestionContent(e.target.value)} />
-            <input type='submit' />
+        <div className='edit-question-form-div'>
+          <form onSubmit={handleEditQuestion} className='edit-question-form'>
+            <input type='text' value={questionContent} onChange={(e) => setQuestionContent(e.target.value)} className='edit-question-content-input' />
+            <input type='submit' className='edit-question-submit-button'/>
           </form>
         </div>
-        : <div>{question?.content}</div>}
+        : <div className='question-content-display-div'>{question?.content}</div>}
       {edittingQuestion && <div onClick={handleDeleteQuestion} className='delete-question-button' >delete</div>}
       {loggedIn && user?.id == question.user_id && edittingQuestion == false ? <div onClick={handleEditClick} className='edit-question-button'>edit</div> : null}
-      <div>{question.answers?.map((answer) => (
-        <div>
+      <div className='answer-list-container-div'>{question.answers?.map((answer) => (
+        <div className='answer-list-div'>
           <Answer answer_id={answer.id} questionToggle={questionToggle} setQuestionToggle={setQuestionToggle} users={users} user={user} user_id={answer.user_id} loggedIn={loggedIn} question_id={id} />
         </div>
       ))}</div>
-      {loggedIn && addingAnswer == false ? <div onClick={handleAnswerClick}>add answer</div> : null}
+      {loggedIn && addingAnswer == false ? <div onClick={handleAnswerClick} className='add-answer-button'>add answer</div> : null}
       {addingAnswer &&
-        <div>
-          <div>Your Answer</div>
-          <div>
-            <form onSubmit={handleAddAnswer}>
+        <div className='adding-answer-display-div'>
+          <div className='your-answer-div'>Your Answer</div>
+          <div className='add-answer-form-div'>
+            <form onSubmit={handleAddAnswer} className='add-answer-form'>
               <input type='text' value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} />
-              <input type='submit' />
+              <input type='submit' className='add-answer-content-input'/>
             </form>
           </div>
         </div>
