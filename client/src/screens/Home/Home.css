@@ -1,0 +1,42 @@
+
+
+.home-text-div-1{
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 30px;
+  text-align: center;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10vh;
+}
+.home-text-div-2{
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 30px;
+  text-align: center;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10vh;
+}
+
+.home-sub-text-div-1 {
+  padding-bottom: 5vh;
+}
+
+.home-category-link-div {
+  margin-top: 10vh;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+  transition: ease-in-out 0.2s;
+}
+
+.home-category-link-div:hover {
+  transform: scale(1.1);
+}
+
