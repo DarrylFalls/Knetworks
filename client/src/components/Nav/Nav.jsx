@@ -25,18 +25,18 @@ const Nav = ({ loggedIn, setLoggedIn, user }) => {
   // }
 
   return (
-    <div>
-      {/* <div><Menu /></div> */}
-      {loggedIn && <div>
+    <div className='main-nav-div'>
+      {/* <div className='nav-menu-button-div'><Menu /></div> */}
+      {loggedIn && <div className='nav-post-question-link-div'>
         <Link to='/post-question'>Ask A Question</Link>
       </div>}
-      <div><Link to='/'>Knetworks</Link></div>
+      <div className='nav-home-link-div'><Link to='/'>Knetworks</Link></div>
       {loggedIn ?
-        <div>
-          <div>{user.username}</div>
-          <div onClick={handleLogout}>Logout</div>
+        <div className='nav-user-and-logout-display-div'>
+          <div className='nav-username-div'>{user.username}</div>
+          <div onClick={handleLogout} className='nav-logout-button-div'>Logout</div>
         </div>
-        : <div><Link to='/login'>Login/Sign Up</Link></div>}
+        : <div className='nav-login-button-div'><Link to='/login'>Login/Sign Up</Link></div>}
     </div>
   )
 }
