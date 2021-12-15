@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
+import './CategoryQuestion.css'
 
 const CategoryQuestions = ({ categories }) => {
   const { id } = useParams()
