@@ -35,20 +35,20 @@ const CreateQuestion = ({ user, setQuestionToggle, questionToggle }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Pick a category.</label>
-          <select name='category_id' value={category_id} onChange={handleChange}>
+    <div className='main-create-question-div'>
+      <form onSubmit={handleSubmit} className='create-question-form'>
+        <label className='create-question-form-category-label'>Pick a category.</label>
+          <select name='category_id' value={category_id} onChange={handleChange} className='drop-down-menu'>
             <option value=''>Category...</option>
             <option value='1'>Science</option>
             <option value='2'>Philosophy</option>
             <option value='3'>History</option>
           </select>
         <br/>
-        <label>What is your question?</label>
-        <input type='textarea' name='content' value={content} onChange={handleChange} />
+        <label className='create-question-form-question-label'>What is your question?</label>
+        <input type='textarea' name='content' value={content} onChange={handleChange} className='create-question-content-input'/>
         <br />
-        <input type='submit' />
+        <input type='submit' className='create-question-submit-button'/>
       </form>
     </div>
   )

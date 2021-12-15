@@ -73,7 +73,7 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
   }
 
   return (
-    <div>
+    <div className='main-question-detail-div'>
       {edittingQuestion ?
         <div>
           <form onSubmit={handleEditQuestion}>
@@ -82,8 +82,8 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
           </form>
         </div>
         : <div>{question?.content}</div>}
-      {edittingQuestion && <div onClick={handleDeleteQuestion} >delete</div>}
-      {loggedIn && user?.id == question.user_id && edittingQuestion == false ? <div onClick={handleEditClick}>edit</div> : null}
+      {edittingQuestion && <div onClick={handleDeleteQuestion} className='delete-question-button' >delete</div>}
+      {loggedIn && user?.id == question.user_id && edittingQuestion == false ? <div onClick={handleEditClick} className='edit-question-button'>edit</div> : null}
       <div>{question.answers?.map((answer) => (
         <div>
           <Answer answer_id={answer.id} questionToggle={questionToggle} setQuestionToggle={setQuestionToggle} users={users} user={user} user_id={answer.user_id} loggedIn={loggedIn} question_id={id} />
