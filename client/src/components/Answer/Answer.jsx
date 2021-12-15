@@ -84,7 +84,7 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
       <div>{answer && numOfComments()} comments</div>
       <div>{answer.comments?.map((comment) => (
         <div>
-          <AnswerComment content={comment.content} user_id={comment.user_id} users={users} loggedIn={loggedIn} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
+          <AnswerComment comment_id={comment.id} content={comment.content} user_id={comment.user_id} users={users} user={user} loggedIn={loggedIn} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
         </div>
       ))}</div>
       {loggedIn && <div>add comment</div>}
