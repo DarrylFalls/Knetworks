@@ -45,7 +45,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 780px) {
   .question-content-display-div {
     font-size: 35px;
   }
