@@ -83,24 +83,24 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
       {edittingQuestion && <div onClick={handleDeleteQuestion} className='delete-question-button' >delete question</div>}
       {loggedIn && user?.id == question.user_id && edittingQuestion == false ? <div onClick={handleEditClick} className='edit-question-button'>edit question</div> : null}
       {loggedIn && addingAnswer == false ? <div onClick={handleAnswerClick} className='add-answer-button'>+ add answer</div> : null}
-      <div className='answer-list-container-div'>{question.answers?.map((answer) => (
-        <div className='answer-list-div'>
-          <hr/>
-          <Answer answer_id={answer.id} questionToggle={questionToggle} setQuestionToggle={setQuestionToggle} users={users} user={user} user_id={answer.user_id} loggedIn={loggedIn} question_id={id} />
-        </div>
-      ))}</div>
-      
       {addingAnswer &&
         <div className='adding-answer-display-div'>
           <div className='your-answer-div'>Your Answer</div>
           <div className='add-answer-form-div'>
             <form onSubmit={handleAddAnswer} className='add-answer-form'>
               <textarea value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} />
+              <br/>
               <input type='submit' className='add-answer-content-input'/>
             </form>
           </div>
         </div>
-        }
+      }
+      <div className='answer-list-container-div'>{question.answers?.map((answer) => (
+        <div className='answer-list-div'>
+          <hr/>
+          <Answer answer_id={answer.id} questionToggle={questionToggle} setQuestionToggle={setQuestionToggle} users={users} user={user} user_id={answer.user_id} loggedIn={loggedIn} question_id={id} />
+        </div>
+      ))}</div>
         </div>
     </div>
   )
