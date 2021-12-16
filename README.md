@@ -39,8 +39,8 @@ _On Knetworks, a user will be able to create an account and post, edit, and dele
 ### Goals
 
 - _Create an account_
-- _post questions and ideas_
-- _post answers and comments on questions and ideas_
+- _post questions_
+- _post answers and comments on questions_
 - _able to edit and delete all posts created by individual user_
 
 <br>
@@ -52,8 +52,7 @@ _On Knetworks, a user will be able to create an account and post, edit, and dele
 | :--------------: | :---------------------------------------------- |
 |      React       | _Front end framework for javascript and HTML_   |
 |   React Router   | _Alows the use of routing on a single page app_ |
-|    Material UI   | _Provides pre-built components for front end_   |
-|  Ruby on Rails   | _Back end framework for building API_          |
+|  Ruby on Rails   | _Back end framework for building API_           |
 
 <br>
 
@@ -98,17 +97,12 @@ src
       |__ QCList/
       |__ QuestionDetail/
       |__ CreateQuestion/
-      |__ IdeaCategories/
-      |__ ICList/
-      |__ IdeaDetail/
-      |__ CreateIdea/
 |__ components/
       |__ Layout.jsx
       |__ Nav.jsx
       |__ Hamburger.jsx
       |__ Answer.jsx
       |__ AnswerComment.jsx
-      |__ IdeaComment.jsx
 |__ services.js
 
 ```
