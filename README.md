@@ -30,6 +30,12 @@ _On Knetworks, a user will be able to create an account and post, edit, and dele
 
 <br>
 
+## Live Site
+
+_https://knetworks.netlify.app/_
+
+<br>
+
 ### Goals
 
 - _Create an account_
