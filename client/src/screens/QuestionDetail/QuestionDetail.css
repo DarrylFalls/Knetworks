@@ -1,0 +1,38 @@
+
+
+.question-content-display-div {
+  /* background: rgba(0, 0, 0, 0.7); */
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  font-size: 40px;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  
+}
+
+.answer-list-div {
+  padding-top: 3vh;
+  
+}
+
+.question-display-div {
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 15vh;
+  padding-top: 2vh;
+  padding-bottom: 3vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.add-answer-button:hover {
+  cursor: pointer;
+}
+
+.edit-question-button {
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+}
+
+.edit-question-button:hover {
+  cursor: pointer;
+}

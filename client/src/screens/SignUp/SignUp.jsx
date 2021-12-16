@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { signUp } from '../../services/utils';
-import {Navigate} from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+import './SignUp.css'
 
 const SignUp = ({setUser, setLoggedIn, setUserToggle, userToggle}) => {
   const [formData, setFormData] = useState({
@@ -38,40 +39,48 @@ const SignUp = ({setUser, setLoggedIn, setUserToggle, userToggle}) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-      <h3>Sign Up</h3>
+      <div className='sign-up-display-div'>
+      <form onSubmit={handleSubmit} className='sign-up-form'>
+      <h3 className='sign-up-title'>Sign Up</h3>
       <label>
         Username:
+          </label>
+          <br/>
         <input
           type='text'
           name='username'
           value={username}
           onChange={handleChange}
         />
-      </label>
+      
       <br />
       <label>
         Email:
+          </label>
+          <br/>
         <input
           type='text'
           name='email'
           value={email}
           onChange={handleChange}
         />
-      </label>
+      
       <br />
       <label>
         Password:
+          </label>
+          <br/>
         <input
           type='password'
           name='password'
           value={password}
           onChange={handleChange}
         />
-      </label>
+      
       <br />
       <button>Submit</button>
-    </form>
+        </form>
+        </div>
     </div>
   )
 }

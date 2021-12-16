@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { deleteAnswer, editAnswer, getAnswerAndComments, postAnswer, postComment } from '../../services/utils'
 import AnswerComment from '../AnswerComment/AnswerComment'
+import './Answer.css'
 
 
 
@@ -72,7 +73,8 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
       {edittingAnswer ? 
         <div className='edit-answer-form-div'>
           <form onSubmit={handleEditAnswer} className='edit-answer-form'>
-            <input type='text' value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} className='edit-answer-content-input'/>
+            <input type='text' value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} className='edit-answer-content-input' />
+            <br />
             <input type='submit' className='edit-answer-submit-button'/>
           </form>
         </div>
@@ -86,12 +88,13 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
           <AnswerComment comment_id={comment.id} content={comment.content} user_id={comment.user_id} users={users} user={user} loggedIn={loggedIn} commentToggle={commentToggle} setCommentToggle={setCommentToggle} />
         </div>
       ))}</div>}
-      {loggedIn && addingComment === false ? <div onClick={() => setAddingComment(true)} className='add-comment-button'>add comment</div> : null}
+      {loggedIn && addingComment === false ? <div onClick={() => setAddingComment(true)} className='add-comment-button'>+ add comment</div> : null}
       {addingComment && 
         <div className='add-comment-container-div'>
           <div className='add-comment-title-div'>Add Your Comment</div>
           <form onSubmit={handleAddComment} className='add-comment-form'>
-            <input type='text' value={commentContent} onChange={(e) => setCommentContent(e.target.value)} className='add-comment-content-input'/>
+            <textarea value={commentContent} onChange={(e) => setCommentContent(e.target.value)} className='add-comment-content-input' />
+            <br/>
             <input type='submit' className='add-comment-submit-button' />
           </form>
         </div>

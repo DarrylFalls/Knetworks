@@ -16,7 +16,7 @@ const CategoryQuestions = ({ categories }) => {
       <div className='back-to-category-link-div'>
         <Link to='/categories' className='back-to-category-link'>back to categories</Link>
       </div>
-      <div className='category-name-div'>{category?.name}</div>
+      <div className='category-name-div'>{category.name?.toUpperCase()}</div>
       <div className='question-list-div'>
         {category.questions?.map((question) => (
           <div className='question-link-div'>

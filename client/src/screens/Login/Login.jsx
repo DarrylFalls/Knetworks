@@ -37,11 +37,14 @@ const Login = ({ setLoggedIn, setUser }) => {
   return (
     <div>
       <div>
+        <div>Login</div>
         <form onSubmit={handleSubmit} >
           <label>email</label>
+          <br/>
           <input type='text' name='email' value={email} onChange={handleChange} />
           <br />
           <label>password</label>
+          <br/>
           <input type='text' name='password' value={password} onChange={handleChange} />
           <br />
           <input type='submit' value='Login' />

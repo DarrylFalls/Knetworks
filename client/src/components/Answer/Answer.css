@@ -1,0 +1,28 @@
+
+
+.main-answer-div {
+  padding-top: 2vh;
+}
+
+.edit-answer-button {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.add-comment-button {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  font-size: 12px;
+}
+
+.answer-content-display-div {
+  font-size: 22px;
+}
+
+.add-comment-button:hover {
+  cursor: pointer;
+}
+
+.edit-answer-button:hover {
+  cursor: pointer;
+}
