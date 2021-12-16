@@ -112,15 +112,15 @@ src
 
 | Task                 | Priority | Estimated Time | Time Invested | Actual Time |
 | -------------------- | :------: | :------------: | :-----------: | :---------: |
-| build backend        |    H     |     6 hrs      |               |             |
-| testing backend      |    H     |     2 hrs      |               |             |
-| building react frame |    H     |     2 hrs      |               |             |
-| building services    |    H     |     3 hrs      |               |             |
-| building components  |    H     |     5 hrs      |               |             |
-| building screens     |    H     |    10 hrs      |               |             |
-| testing              |    H     |     2 hrs      |               |             |
-| CSS styling          |    M     |     8 hrs      |               |             |
-| TOTAL                |          |    38 hrs      |     TBD       |     TBD     |
+| build backend        |    H     |     6 hrs      |     5 hrs     |    5 hrs    |
+| testing backend      |    H     |     2 hrs      |     2 hrs     |    2 hrs    |
+| building react frame |    H     |     2 hrs      |     4 hrs     |    4 hrs    |
+| building services    |    H     |     3 hrs      |     3 hrs     |    3 hrs    |
+| building components  |    H     |     5 hrs      |     4 hrs     |    4 hrs    |
+| building screens     |    H     |    10 hrs      |    12 hrs     |   12 hrs    |
+| testing              |    H     |     2 hrs      |     3 hrs     |    3 hrs    |
+| CSS styling          |    M     |     8 hrs      |    12 hrs     |   12 hrs    |
+| TOTAL                |          |    38 hrs      |    45 hrs     |   45 hrs    |
 
 
 <br>
@@ -146,8 +146,25 @@ src
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+- code to have edit and add forms on the same page as where the information is being displayed
+
+``
+{loggedIn && user?.id == question.user_id && edittingQuestion == false ? <div onClick={handleEditClick} className='edit-question-button'>edit question</div> : null}
+{loggedIn && addingAnswer == false ? <div onClick={handleAnswerClick} className='add-answer-button'>+ add answer</div> : null}
+{addingAnswer &&
+  <div className='adding-answer-display-div'>
+    <div className='your-answer-div'>Your Answer</div>
+    <div className='add-answer-form-div'>
+      <form onSubmit={handleAddAnswer} className='add-answer-form'>
+        <textarea value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} />
+        <br/>
+        <input type='submit' className='add-answer-content-input'/>
+      </form>
+    </div>
+  </div>
+}
+``
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+- I had issues with getting multiple layers on the api. I added 'dependent: :destroy' on the models to fix this.
