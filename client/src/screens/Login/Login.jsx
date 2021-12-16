@@ -1,6 +1,7 @@
 import {Link, Navigate} from 'react-router-dom'
 import { login } from '../../services/utils'
-import {useState} from 'react'
+import { useState } from 'react'
+import './Login.css'
 
 const Login = ({ setLoggedIn, setUser }) => {
   const [formData, setFormData] = useState({
@@ -36,9 +37,10 @@ const Login = ({ setLoggedIn, setUser }) => {
 
   return (
     <div>
+      <div className='login-display-div'>
       <div>
-        <div>Login</div>
-        <form onSubmit={handleSubmit} >
+        <div className='login-title-div'>Login</div>
+        <form onSubmit={handleSubmit} className='login-form'>
           <label>email</label>
           <br/>
           <input type='text' name='email' value={email} onChange={handleChange} />
@@ -52,9 +54,10 @@ const Login = ({ setLoggedIn, setUser }) => {
       </div>
       <div>
         <Link to='/sign-up'>
-          Sign Up
+          Create Account
         </Link>
-      </div>
+        </div>
+        </div>
     </div>
   )
 }
