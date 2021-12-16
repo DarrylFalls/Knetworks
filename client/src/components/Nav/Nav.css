@@ -40,4 +40,20 @@
   margin-right: 10px;
 }
 
-.nav-post-question-link-div{}
+@media screen and (max-width: 480px) {
+.nav-post-question-link-div{
+  display: none;
+}
+
+.nav-user-and-logout-display-div{
+  display: none;
+}
+
+.nav-login-button-div {
+  display: none;
+}
+
+.main-nav-div {
+  justify-content: center;
+}
+}

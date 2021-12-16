@@ -36,3 +36,22 @@
 .edit-question-button:hover {
   cursor: pointer;
 }
+
+.delete-question-button {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+.delete-question-button:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .question-content-display-div {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .question-content-display-div {
+    font-size: 30px;
+  }
+}
