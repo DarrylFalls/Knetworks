@@ -43,7 +43,7 @@ const SignUp = ({setUser, setLoggedIn, setUserToggle, userToggle}) => {
       <form onSubmit={handleSubmit} className='sign-up-form'>
       <h3 className='sign-up-title'>Sign Up</h3>
       <label>
-        Username:
+        username:
           </label>
           <br/>
         <input
@@ -55,7 +55,7 @@ const SignUp = ({setUser, setLoggedIn, setUserToggle, userToggle}) => {
       
       <br />
       <label>
-        Email:
+        email:
           </label>
           <br/>
         <input
@@ -67,7 +67,7 @@ const SignUp = ({setUser, setLoggedIn, setUserToggle, userToggle}) => {
       
       <br />
       <label>
-        Password:
+        password:
           </label>
           <br/>
         <input
@@ -78,7 +78,7 @@ const SignUp = ({setUser, setLoggedIn, setUserToggle, userToggle}) => {
         />
       
       <br />
-      <button>Submit</button>
+      <button>Create Account</button>
         </form>
         </div>
     </div>

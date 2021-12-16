@@ -1,0 +1,25 @@
+
+.login-display-div {
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 15vh;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  padding-top: 3vh;
+  padding-bottom: 5vh;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-title-div {
+  padding-bottom: 3vh;
+  font-size: 35px;
+}
+
+.create-account-link-div {
+  padding-top: 3vh;
+}

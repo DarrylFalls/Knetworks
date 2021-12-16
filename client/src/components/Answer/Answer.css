@@ -26,3 +26,7 @@
 .edit-answer-button:hover {
   cursor: pointer;
 }
+
+.num-of-comments-div {
+  padding-top: 1vh;
+}

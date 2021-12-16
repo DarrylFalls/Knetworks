@@ -41,22 +41,22 @@ const Login = ({ setLoggedIn, setUser }) => {
       <div>
         <div className='login-title-div'>Login</div>
         <form onSubmit={handleSubmit} className='login-form'>
-          <label>email</label>
+          <label>email:</label>
           <br/>
           <input type='text' name='email' value={email} onChange={handleChange} />
           <br />
-          <label>password</label>
+          <label>password:</label>
           <br/>
           <input type='text' name='password' value={password} onChange={handleChange} />
           <br />
           <input type='submit' value='Login' />
         </form>
       </div>
-      <div>
+      <div className='create-account-link-div'>
         <Link to='/sign-up'>
           Create Account
         </Link>
-        </div>
+      </div>
         </div>
     </div>
   )

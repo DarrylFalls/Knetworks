@@ -20,11 +20,6 @@ const Nav = ({ loggedIn, setLoggedIn, user }) => {
     setNavigateToggleLogout(false)
   }
 
-  // if (navigateToggleQuestion) {
-  //   navigate('/post-question')
-  //   setNavigateToggleQuestion(false)
-  // }
-
   return (
     <div className='main-nav-div'>
       {/* <div className='nav-menu-button-div'><Menu /></div> */}

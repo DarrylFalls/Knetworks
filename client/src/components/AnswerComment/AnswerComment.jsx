@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { deleteComment, editComment } from '../../services/utils'
+import './AnswerComment.css'
 
 
 const AnswerComment = ({ content, user_id, users, loggedIn, commentToggle, setCommentToggle, comment_id, user }) => {
