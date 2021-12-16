@@ -24,13 +24,11 @@ const Answer = ({ answer_id, questionToggle, setQuestionToggle, users, user_id, 
     fetchAnswer()
     const userData = users.find(u => u.id == user_id)
     setAnswerUser(userData)
-    console.log(userData)
   }, [questionToggle, commentToggle])
 
   useEffect(() => {
     setAnswerContent(answer?.content)
     setCommentNum(answer.answer_comments?.length)
-    console.log(answer)
   }, [answer])
 
   const handleEditAnswer = async (e) => {

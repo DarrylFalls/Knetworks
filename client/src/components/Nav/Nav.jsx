@@ -6,7 +6,6 @@ import './Nav.css'
 
 const Nav = ({ loggedIn, setLoggedIn, user }) => {
   const [navigateToggleLogout, setNavigateToggleLogout] = useState(false)
-  // const [navigateToggleQuestion, setNavigateToggleQuestion] = useState(false)
 
   const navigate = useNavigate()
   const handleLogout = () => {
@@ -22,7 +21,6 @@ const Nav = ({ loggedIn, setLoggedIn, user }) => {
 
   return (
     <div className='main-nav-div'>
-      {/* <div className='nav-menu-button-div'><Menu /></div> */}
       <div className='nav-post-question-link-div'>
         {loggedIn && <Link to='/post-question'>Ask A Question</Link>}
       </div>

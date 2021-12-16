@@ -12,7 +12,6 @@ const AnswerComment = ({ content, user_id, users, loggedIn, commentToggle, setCo
     setCommentContent(content)
     const getUsername = () => {
       const name = users.find(u => u.id === user_id)
-      console.log(`user is ${username.username}`)
       setUsername(name.username)
     }
     getUsername()

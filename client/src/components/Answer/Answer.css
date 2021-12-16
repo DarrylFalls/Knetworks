@@ -30,3 +30,7 @@
 .num-of-comments-div {
   padding-top: 1vh;
 }
+
+.num-of-comments-div:hover {
+  cursor: pointer;
+}

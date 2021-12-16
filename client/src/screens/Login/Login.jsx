@@ -26,7 +26,6 @@ const Login = ({ setLoggedIn, setUser }) => {
     if (submitUser) {
       setUser(submitUser)
       setLoggedIn(true)
-      console.log(submitUser)
       setNavigate(true)
     }
   }
@@ -47,7 +46,7 @@ const Login = ({ setLoggedIn, setUser }) => {
           <br />
           <label>password:</label>
           <br/>
-          <input type='text' name='password' value={password} onChange={handleChange} />
+          <input type='password' name='password' value={password} onChange={handleChange} />
           <br />
           <input type='submit' value='Login' />
         </form>

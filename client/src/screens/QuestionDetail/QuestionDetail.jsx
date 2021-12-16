@@ -8,13 +8,11 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
   const navigate = useNavigate()
   const { id } = useParams()
   const [question, setQuestion] = useState('')
-  // const [answerToggle, setAnswerToggle] = useState(true)
   const [questionToggle, setQuestionToggle] = useState(true)
   const [edittingQuestion, setEdittingQuestion] = useState(false)
   const [questionContent, setQuestionContent] = useState('')
   const [answerContent, setAnswerContent] = useState('')
   const [addingAnswer, setAddingAnswer] = useState(false)
-  // const [category_id, setCategory_id] = useState('')
 
   useEffect(() => {
     const fetchQuestion = async () => {
@@ -26,7 +24,6 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
 
   useEffect(() => {
     setQuestionContent(question?.content)
-    // setCategory_id(question?.category_id)
   }, [question])
 
   const handleEditClick = () => {
@@ -98,7 +95,7 @@ const QuestionDetail = ({ loggedIn, user, users }) => {
           <div className='your-answer-div'>Your Answer</div>
           <div className='add-answer-form-div'>
             <form onSubmit={handleAddAnswer} className='add-answer-form'>
-              <input type='text' value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} />
+              <textarea value={answerContent} onChange={(e) => setAnswerContent(e.target.value)} />
               <input type='submit' className='add-answer-content-input'/>
             </form>
           </div>
