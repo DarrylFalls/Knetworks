@@ -24,15 +24,15 @@ _Knetworks is a website for thinking out loud. Here you can ask questions or pre
 
 <br>
 
-## MVP
-
-_On Knetworks, a user will be able to create an account and post, edit, and delete questions, ideas, answers, and comments._
-
-<br>
-
 ## Live Site
 
 _https://knetworks.netlify.app/_
+
+<br>
+
+## MVP
+
+_On Knetworks, a user will be able to create an account and post, edit, and delete questions, ideas, answers, and comments._
 
 <br>
 
