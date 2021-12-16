@@ -51,7 +51,7 @@ const AnswerComment = ({ content, user_id, users, loggedIn, commentToggle, setCo
           </div>
           : <div className='comment-content-display-div'>{content} -{username}</div>}
       </div>
-      {loggedIn && user_id == user.id && edittingComment === false ? <div onClick={() => setEdittingComment(true)} className='edit-comment-button'>edit</div> : null}
+      {loggedIn && user_id == user.id && edittingComment === false ? <div onClick={() => setEdittingComment(true)} className='edit-comment-button'>edit comment</div> : null}
       {edittingComment && <div onClick={handleDelete} className='delete-comment-button'>delete</div>}
     </div>
   )
