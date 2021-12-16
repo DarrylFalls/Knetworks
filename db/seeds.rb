@@ -27,21 +27,21 @@ Category.create!(name: 'history')
 
 puts "#{Category.count} categories created"
 
-Question.create!(content: 'who', user_id: '1', category_id: '1')
-Question.create!(content: 'what', user_id: '2', category_id: '1')
-Question.create!(content: 'when', user_id: '3', category_id: '2')
-Question.create!(content: 'where', user_id: '4', category_id: '2')
-Question.create!(content: 'why', user_id: '5', category_id: '3')
-Question.create!(content: 'how', user_id: '1', category_id: '3')
+Question.create!(content: 'How big is the Milky Way?', user_id: '1', category_id: '1')
+Question.create!(content: 'What is deuterium?', user_id: '2', category_id: '1')
+Question.create!(content: 'What is the meaning of life?', user_id: '3', category_id: '2')
+Question.create!(content: 'Can you stand in the same river twice?', user_id: '4', category_id: '2')
+Question.create!(content: 'Who did the US fight in the war of 1812?', user_id: '5', category_id: '3')
+Question.create!(content: 'How old are the pyramids of Egypt?', user_id: '1', category_id: '3')
 
 puts "#{Question.count} questions created"
 
-Answer.create!(content: 'answer to question 1 asked by user1', user_id: '2', question_id: '1')
-Answer.create!(content: 'answer to question 2 asked by user2', user_id: '3', question_id: '2')
-Answer.create!(content: 'answer to question 3 asked by user3', user_id: '4', question_id: '3')
-Answer.create!(content: 'answer to question 4 asked by user4', user_id: '5', question_id: '4')
-Answer.create!(content: 'answer to question 5 asked by user5', user_id: '1', question_id: '5')
-Answer.create!(content: 'answer to question 6 asked by user1', user_id: '2', question_id: '6')
+Answer.create!(content: 'Its about 100,000 light years across.', user_id: '2', question_id: '1')
+Answer.create!(content: 'It is an isotope of hydrogen with a nucleus consisting of one proton and one neutron, which is double the mass of the nucleus of ordinary hydrogen (one proton).', user_id: '3', question_id: '2')
+Answer.create!(content: '42', user_id: '4', question_id: '3')
+Answer.create!(content: 'depends on who you ask', user_id: '5', question_id: '4')
+Answer.create!(content: 'Great Britain', user_id: '1', question_id: '5')
+Answer.create!(content: 'They are believed to be about 4,500 years old.', user_id: '2', question_id: '6')
 
 puts "#{Answer.count} answers created"
 
