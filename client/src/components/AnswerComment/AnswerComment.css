@@ -3,3 +3,8 @@
 .main-comment-div {
   padding-top: 1vh;
 }
+
+.comment-content-display-div {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}

@@ -49,9 +49,17 @@
   .question-content-display-div {
     font-size: 35px;
   }
+
+  .question-display-div {
+    margin-bottom: 5vh;
+  }
 }
 @media screen and (max-width: 480px) {
   .question-content-display-div {
     font-size: 30px;
+  }
+
+  .question-display-div {
+    margin-bottom: 5vh;
   }
 }
